@@ -1,15 +1,15 @@
 name: "jboss-amq-6/amq62"
 description: "Red Hat JBoss AMQ 6.2 container image"
 version: "6.2.1"
-from: "jboss/openjdk18-rhel7:1.0"
+from: "registry.access.redhat.com/redhat-openjdk-18/openjdk18-openshift:1.0" 
 user: 185
 envs:
     - name: "JBOSS_PRODUCT"
       value: "AMQ"
     - name: "JBOSS_AMQ_VERSION"
-      value: "6.2.1.redhat_211"
+      value: "6.2.1.redhat_159-04"
     - name: "PRODUCT_VERSION"
-      value: "6.2.1.redhat_211"
+      value: "6.2.1.redhat_159-04"
     - name: "AMQ_HOME"
       value: "/opt/amq"
 cmd:
@@ -21,8 +21,8 @@ scripts:
     - package: amq-chown
       exec: install.sh
 sources:
-    - artifact: jboss-a-mq-6.2.1.redhat-211.zip
-      md5: 27e8b991af9b154d1e5677c3ab518f1f
+    - artifact: jboss-a-mq-6.2.1.redhat-159-04.zip
+      md5: f4ec1874c0cb1e4e688cd451afed187e
       hint: "Artifact is available on Customer Portal: https://access.redhat.com/jbossnetwork/restricted/softwareDetail.html?softwareId=53431&product=jboss.amq&version=6.2.1&downloadType=securityPatches"
 dogen:
     version: 2.4.3
